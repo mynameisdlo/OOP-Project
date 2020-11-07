@@ -175,7 +175,7 @@ operator>>
 ```
 Overload the extraction operator to be able to extract data from an istream object into the Time object
 
-## menuTester.cpp execution sample
+## timeTester.cpp execution sample
 ```Text
 E: 00:00
 D: 23:05
