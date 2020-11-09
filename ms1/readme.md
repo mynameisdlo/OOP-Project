@@ -162,7 +162,7 @@ Time& operator-= (const Time& D);
 Calculates the time difference between the current time and the incoming argument Time **D**. Note that the difference can never be a negative value:<br/>
 23:00 -= 9:00 will be **14:00**.<br />
 18:00 -= 16:00 will be **2:00**.<br />
-1:00 -= 22:00 will be **3:00**.  (**1:00** + 24:00 - **22:00**)<br /> 
+1:00 -= 22:00 will be **3:00**.  ((**1:00** + 24:00) - **22:00**)<br /> 
 See the illustration below:
 ![Time](images/time.png)
 
