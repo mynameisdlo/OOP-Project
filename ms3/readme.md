@@ -1,7 +1,8 @@
  # Project: General Hospital Pre-Triage Application
 - [MS1 V1.0](#milestone-1)
 - [MS2 V1.0](#milestone-2)
-- [MS3 V0.9](#milestone-3)
+- [MS3 V1.1](#milestone-3)<br />
+V1.1: corrected minor problem in ms3tester.
 
 Because of the pandemic and prevention of the spread of COVID19, hospitals need to screen the patients and separate those in need of COVID-test from others. This has to be done in an orderly fashion by letting the patients know what is the expected wait time and let them know when they can be admitted. 
 
