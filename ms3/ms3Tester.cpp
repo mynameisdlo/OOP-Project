@@ -1,5 +1,5 @@
 // Patient Tester:
-// Version: 1.0
+// Version: 1.1 (corrected matching outputs)
 // Date: 11/16/2020
 // Author: Fardad 
 // Description:
@@ -66,7 +66,9 @@ int main() {
    cout << "1- Your output on screen:" << endl;
    cout << *p << endl;
    cout << "2- The output should be:" << endl;
-   cout << *p << endl<<endl;
+   // V1.1
+   cout << "Ticket No: 200, Issued at: 12:50\n"
+           "Jo Lee, OHIP: 234234234" << endl<<endl;
 
    cout << "Testing File IO: " << endl;
    int i = 0;
