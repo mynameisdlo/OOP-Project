@@ -3,7 +3,8 @@
 - [MS2 V1.0](#milestone-2)
 - [MS3 V1.1](#milestone-3)<br />
 V1.1: corrected minor problem in ms3tester.
-- [MS4 V1.0](#milestone-4)
+- [MS4 V1.1](#milestone-4)<br />
+Corrected typo in csvRead, changed ~~ostream~~ to istream [Here](#csvread-virtual-function-override) and [Here](#the-csvread-virtual-function-override) 
 
 Because of the pandemic and prevention of the spread of COVID19, hospitals need to screen the patients and separate those in need of COVID-test from others. This has to be done in an orderly fashion by letting the patients know what is the expected wait time and let them know when they can be admitted. 
 
@@ -754,10 +755,10 @@ This function only returns the character **'C'**;
 ### csvWrite virtual function override.
 This function only calls the **csvWrite** function of the base class **Patient** and returns the **ostream** reference.
 
-### csvRead virtual function override.
+### csvRead virtual function override
 First this function will call the **csvRead** function of the base class **Patient**, then it will set the **nextCovidTicket** global variable to the return value of the **number()** function of the **Patient** class plus **one**. 
 
-Finally, it will return the ostream reference.
+Finally, it will return the ~~ostream~~ istream reference.
 
 ### write virtual function override.
 If the **fileIO** member function returns **true**, it will call **csvWrite** function, otherwise it will first insert **"COVID TEST"** into the **ostream** object and goes to **newline**. Then it will call the **write()** function of the base class **Patient** and then goes to **newline**.
@@ -850,7 +851,7 @@ This function only returns the character **'T'**;
 ### csvWrite virtual function override.
 This function calls the **csvWrite** function of the base class **Patient** then inserts a comma (',') character into the ostream object then the symptoms of the patient. Then it returns the **ostream** reference.
 
-### csvRead virtual function override.
+### the csvRead virtual function override 
 csvRead reads the TriagePatient's comma-separated information as follows:
 - Deletes the memory pointed by the [symptoms member variable](#symptoms-character-pointer-member-variable)
 - Calls the **csvRead** function of the base class **Patient**.
@@ -859,7 +860,7 @@ csvRead reads the TriagePatient's comma-separated information as follows:
 - Allocates memory to the size of the symptoms read (pointed by the symptoms member variable)
 - Copies the local Cstring into the dynamically allocated memory.
 - sets the **nextTriageTicket** global variable to the return value of the number() member function of the Patient class plus one.
-- returns the ostream reference.
+- returns the ~~ostream~~ istream reference.
 
 ### write virtual function override.
 If the **fileIO** member function returns **true**, it will call **csvWrite** function. otherwise, it will write the TriagePatient as follows:  
