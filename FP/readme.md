@@ -5,7 +5,7 @@
 V1.1: corrected minor problem in ms3tester.
 - [MS4 V1.1](#milestone-4)<br />
 Corrected typo in csvRead, changed ~~ostream~~ to istream [Here](#csvread-virtual-function-override) and [Here](#the-csvread-virtual-function-override) 
-- [MS5 V0.8 (Final Milestone)](#milestone-5)
+- [MS5 V0.91 (Final Milestone)](#milestone-5)
 
 Because of the pandemic and prevention of the spread of COVID19, hospitals need to screen the patients and separate those in need of COVID-test from others. This has to be done in an orderly fashion by letting the patients know what is the expected wait time and let them know when they can be admitted. 
 
@@ -1248,6 +1248,7 @@ Registers a new patient
 - if the selection is 0, terminate the function
 - set the patient's arrival time 
 - print: `"Please enter patient information: "`
+- (you might need to set the patient not to do File IO) V0.91
 - extract the patient from cin
 - go to newline
 - print: `"******************************************"`
@@ -1271,6 +1272,7 @@ Calls the next patient in line to be admitted to the COVID test centre or Triage
 - go to newline
 - print: `"******************************************"`
 - go to newline
+- set the patient not to do File IO V0.91
 - print: `"Calling for "`
 - insert the patient into cout
 - print: `"******************************************"`
@@ -1308,7 +1310,50 @@ The fpTester program will be copied from the professor's directory to yours and 
 The execution samples will be provided by Monday, Dec 30th.
 
 ## MS5 Submission and the due date
+Milestone 5 is due on Saturday, Dec 5th, 23:59 for a full mark. 
 
-Milestone 5 is due on Saturday, Dec 5th, 23:59 for a full mark.
+### Milestone submission marks
+15% mark for milestones if they are submitted in the past 4 weeks and not all at once at the end. (no hard due date for ms1 to ms4; OK if submissions are done regularly in the past four weeks)
 
-The details for different types of submission and late submission penalties will be released by Monday, Dec 30th.
+
+### Bonus mark (110%)
+Early submissions before Dec 4th, 23:59 will get a 10% bonus mark.
+
+### Submitting with non-exact output (10% penalty)
+If your submission does not match the output exactly and is different with number of spaces or newlines, you can submit your work using the following options:  
+```text
+~porfname.proflastname/submit 244/prj/fp -skip_spaces 
+or
+~porfname.proflastname/submit 244/prj/fp -skip_blank_lines
+or both
+~porfname.proflastname/submit 244/prj/fp -skip_blank_lines -skip_spaces
+```
+
+### Open submission (Maximum 65% for incomplete work)
+
+This submission will not check the output. But the program must compile and run successfully and must be functional.
+#### NOTE:
+- Submission is rejected if milestones 1 to 4 are not submitted regularly (submissions do not have to match the due-dates exactly)
+- The mark is based on the professor’s discretion and a maximum 65% is not a guaranty.
+- You must mention in your reflect.txt why you chose open submission.
+- You may use open submission after you have done your full submission if you have added additional features and want to demonstrate them for extra marks; make sure to discuss this with your professor and have the details in your reflection submission.
+
+
+### Submission  (not open yet)
+
+Upload your source code and the tester programs to your `matrix` account. Compile and run your code using the `g++` compiler as shown above and make sure that everything works properly.
+
+Then, run the following command from your account (replace `profname.proflastname` with your professor’s Seneca userid):
+
+#### Normal submission
+```
+~profname.proflastname/submit 244/prj/fp
+```
+#### Open submission
+```
+~profname.proflastname/submit 244/prj/open
+```
+and follow the instructions.
+
+
+> **:warning:Important:** Please note that a successful submission does not guarantee full credit for this workshop. If the professor is not satisfied with your implementation, your professor may ask you to resubmit. Re-submissions will attract a penalty.
