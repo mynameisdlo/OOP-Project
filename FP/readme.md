@@ -5,7 +5,9 @@
 V1.1: corrected minor problem in ms3tester.
 - [MS4 V1.1](#milestone-4)<br />
 Corrected typo in csvRead, changed ~~ostream~~ to istream [Here](#csvread-virtual-function-override) and [Here](#the-csvread-virtual-function-override) 
-- [MS5 V0.91 (Final Milestone)](#milestone-5)
+- [MS5 V0.92 (Final Milestone)](#milestone-5)<br />
+  [0.91 submission details](#ms5-submission-and-the-due-date)<br/>
+  [0.92 initialization sample](#pretriage-constructor) 
 
 Because of the pandemic and prevention of the spread of COVID19, hospitals need to screen the patients and separate those in need of COVID-test from others. This has to be done in an orderly fashion by letting the patients know what is the expected wait time and let them know when they can be admitted. 
 
@@ -1127,7 +1129,7 @@ Menu object to hold the main menu.
 #### m_pMenu
 Menu object to hold the COVID/Triage patient selection.
 ### Member functions, Constructor and Destructor
-#### Constructor
+#### PreTriage Constructor
 PreTriage is constructed using a Cstring for a file name that will be used as the data file for the module. This name will be kept dynamically in the m_dataFilename member variable.
 
 The constructor will initialize the the following objects:  
@@ -1138,8 +1140,27 @@ The constructor will initialize the the following objects:
 - m_averCovidWait will be initialized to 15
 - m_averTriageWait will be initialized to 5
 
+> Note: V0.92, You can initialize member variables and member objects the same way the Base constructor is invoked for initialization in inheritance. See the following example:
+```C++
+    class Foo{
+       int m_value;
+       char m_charval[20]{};  
+    public: 
+       Foo(int v, const char* cv):m_value(v){ // <<-- here m_value is being initialized by v
+          strcpy(m_charval, cv);  
+       }
+    }
+    class Faa{
+       Foo m_obj;
+    public:
+       Faa(int v, const char* cv):m_obj(v, cv){ // <<-- here m_obj is being initialized by v and cv
+          //....
+       }
+    }
+```
+
 After all these, the **load()** member function will be called to import the Patient records from the data file. (see load function)
-#### Destructor
+#### PreTriage Destructor
 - The data file is opened for output, overwriting the content of the file if it already exists.
 - The average COVID wait time and the average Triage wait time is written in the first line of the file, comma-separated and also on the screen as follows:  
 ```text
